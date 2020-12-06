@@ -1,3 +1,3 @@
 # WT-Lab
-Java Web App\n
+Java Web App. 
 Dev Team Project
