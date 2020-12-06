@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        id="WebApp_ID"
+        version="2.5">
+    <display-name>LoginMvc</display-name>
+    <welcome-file-list>
+        <welcome-file>Login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name>UserFilter</filter-name>
+        <filter-class>com.mvc.filter.UserFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>UserFilter</filter-name>
+        <url-pattern>/home/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <display-name>ManagerHome</display-name>
+        <servlet-name>ManagerHome</servlet-name>
+        <servlet-class>com.mvc.controller.ManagerHome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerHome</servlet-name>
+        <url-pattern>/Projects</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>CustomerProjectCreateServlet</display-name>
+        <servlet-name>CustomerProjectCreateServlet</servlet-name>
+        <servlet-class>com.mvc.controller.CustomerProjectCreateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerProjectCreateServlet</servlet-name>
+        <url-pattern>/AddProject</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <display-name>CustomerHome</display-name>
+        <servlet-name>CustomerHome</servlet-name>
+        <servlet-class>com.mvc.controller.CustomerHome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerHome</servlet-name>
+        <url-pattern>/MyProjects</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>SpecificationEdit</display-name>
+        <servlet-name>CustomerProjectEditServlet</servlet-name>
+        <servlet-class>com.mvc.controller.CustomerProjectEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerProjectEditServlet</servlet-name>
+        <url-pattern>/project</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>ManagerProjectEditServlet</display-name>
+        <servlet-name>ManagerProjectEditServlet</servlet-name>
+        <servlet-class>com.mvc.controller.ManagerProjectEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerProjectEditServlet</servlet-name>
+        <url-pattern>/project-registration</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>LoginServlet</display-name>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mvc.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>RegisterServlet</display-name>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.mvc.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>LogoutServlet</display-name>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.mvc.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
